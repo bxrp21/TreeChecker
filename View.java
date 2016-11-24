@@ -20,9 +20,10 @@ public class View implements ViewI {
 	
 	public void display(Object o){
 		try{
-			System.out.println("Display took in "+o);
-			if(!o.equals(null))
+			if(o != null){
+				System.out.println("Display took in "+o.toString());
 				writer.write(o.toString());
+			}
 			else{
 				writer.write(null+"\n");
 				writer.flush();
