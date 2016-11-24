@@ -20,6 +20,15 @@ public class FloweringTree {
 	private String treeName;
 	
 //------------------------------------------------------------------------------------------------------	
+/**
+ * 
+ * Flowering Tree constructor.	
+ * @param blossomStartDay
+ * @param blossomEndDay
+ * @param blossomStartHour
+ * @param blossomEndHour
+ * @param name
+ */
 	
 	public FloweringTree(int blossomStartDay, int blossomEndDay, int blossomStartHour, int blossomEndHour, String name){
 		treeName = name;
@@ -28,18 +37,39 @@ public class FloweringTree {
 	}
 	
 //-----------------------------------------------------------------------------------------------------	
-
+/**
+ * This method sets the name of a tree to newName.
+ * @param newName
+ */
 	public void setName(String newName){
 		treeName = newName;
 	}//setName() method
 	
 //-----------------------------------------------------------------------------------------------------		
-
+/**
+ *
+ * @return The name of the tree.
+ */
+	
 	public String getName(){
 		return treeName;
 	}//getName() method
 	
 //-----------------------------------------------------------------------------------------------------	
+
+	public String toString(){
+		return getName();
+	}
+	
+	
+	
+//-----------------------------------------------------------------------------------------------------	
+/**
+ * 	
+ * @param day
+ * @param hour
+ * @return total time represented in hours.
+ */
 	
 	public int getInTotalHours(int day, int hour){
 		int total = 0;
@@ -48,6 +78,12 @@ public class FloweringTree {
 	}
 	
 //-----------------------------------------------------------------------------------------------------	
+/**
+ * 	
+ * @param day
+ * @param hour
+ * @return True if the flower is blooming at the specified time, false otherwise.
+ */
 	
 	public boolean isFlowering(int day, int hour){
 		int currAbsoluteTime = getInTotalHours(day, hour); 

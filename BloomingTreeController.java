@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class BloomingTreeController {
 
@@ -7,19 +8,35 @@ public class BloomingTreeController {
  * Instance Variables	
  */
 	ArrayList<FloweringTree> listOfTrees;
-	should this be in the model in a more explicit way??
-	
-	
-	
+	View floweringTreeView;
+
 //-----------------------------------------------------------------------------------	
 /**
  * Blooming tree controller constructor	
  */
 	
 	public BloomingTreeController(){
-		ArrayList<FloweringTree> listOfTrees = new ArrayList<FloweringTree>(); 
+		listOfTrees = new ArrayList<FloweringTree>(); 
+		floweringTreeView = new View();
 	}//BloomingTreeController constructor
 	
+//-----------------------------------------------------------------------------------
+/**
+ * The following method will run the controller leaving it open to accept and respond to
+ * queries about which trees are flowering. 
+ * 
+ */
+	
+	public void Run(){
+		while(true){
+			floweringTreeView.displayPrompt();
+			String line = floweringTreeView.readLine();
+			Scanner sc = new Scanner(line);
+			int day = sc.nextInt();
+			int hour = sc.nextInt();
+			displayCurrFloweringTrees(day, hour);
+		}//while
+	}//run() method
 	
 //-----------------------------------------------------------------------------------	
 	
@@ -41,9 +58,13 @@ public class BloomingTreeController {
 	
 //-----------------------------------------------------------------------------------	
 	
+//display is the method to use	
+	
 	public void displayCurrFloweringTrees(int day, int hour){
 		ArrayList<String> bloomingList = listofIsBlooming(day, hour);
-		
+		for(int i=0; i<bloomingList.size(); i++){
+			floweringTreeView.display(bloomingList.get(i));
+		}//for
 	}//displayCurrFloweringTrees() method
 	
 //-----------------------------------------------------------------------------------	
