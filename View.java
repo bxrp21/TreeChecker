@@ -30,4 +30,11 @@ public class View implements ViewI {
 			}
 		}catch(Exception e){e.printStackTrace();}
 	}
+	
+	public void displayPrompt(){
+		try{
+			writer.write("Please input a command...\n");
+			writer.flush();
+		}catch(Exception e){e.printStackTrace();}
+	}
 }
