@@ -57,9 +57,12 @@ public class BloomingTreeController {
 	}//listofIsBlooming method
 	
 //-----------------------------------------------------------------------------------	
-	
-//display is the method to use	
-	
+/**
+ * This method displays the list of trees currently flowering at a given day and hour.
+ * @param day
+ * @param hour
+ */
+		
 	public void displayCurrFloweringTrees(int day, int hour){
 		ArrayList<String> bloomingList = listofIsBlooming(day, hour);
 		for(int i=0; i<bloomingList.size(); i++){
@@ -68,5 +71,20 @@ public class BloomingTreeController {
 	}//displayCurrFloweringTrees() method
 	
 //-----------------------------------------------------------------------------------	
+/**
+ * This method adds a type of flowering tree to the model constructed based on the
+ * parameters given.
+ * @param blossomStartDay
+ * @param blossomEndDay
+ * @param blossomStartHour
+ * @param blossomEndHour
+ * @param name
+ */
+	
+	public void addFloweringTreeType(int blossomStartDay, int blossomEndDay, int blossomStartHour, int blossomEndHour, String name){
+		listOfTrees.add(new FloweringTree(blossomStartDay, blossomEndDay, blossomStartHour, blossomEndHour, name));
+	}//addBloomingTree() method
+	
+//-----------------------------------------------------------------------------------
 	
 }//Controller
