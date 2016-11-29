@@ -88,7 +88,7 @@ public class FloweringTree {
 	
 	public boolean isFlowering(int day, int hour){
 		int currAbsoluteTime = getInTotalHours(day, hour); 
-		if(floweringStartTimeHours <= currAbsoluteTime && currAbsoluteTime >= floweringEndTimeHours){
+		if(floweringStartTimeHours <= currAbsoluteTime && currAbsoluteTime <= floweringEndTimeHours){
 			return true;
 		}//if
 		return false;
