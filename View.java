@@ -33,7 +33,7 @@ public class View implements ViewI {
 	
 	public void displayPrompt(){
 		try{
-			writer.write("Please input a command...\n");
+			writer.write("Please input a day and time (int int)...\n");
 			writer.flush();
 		}catch(Exception e){e.printStackTrace();}
 	}

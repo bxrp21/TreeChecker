@@ -65,9 +65,19 @@ public class BloomingTreeController {
 		
 	public void displayCurrFloweringTrees(int day, int hour){
 		ArrayList<String> bloomingList = listofIsBlooming(day, hour);
+		floweringTreeView.display("The flowering trees at the day and time are...\n");
 		for(int i=0; i<bloomingList.size(); i++){
 			floweringTreeView.display(bloomingList.get(i));
+			if(i+2 == bloomingList.size())
+				floweringTreeView.display(", and ");
+			else if(i+1 != bloomingList.size())
+				floweringTreeView.display(", ");	
+			else
+				floweringTreeView.display(".");
 		}//for
+		if(bloomingList.size() == 0)
+			floweringTreeView.display("None.");
+		floweringTreeView.display("\n");
 	}//displayCurrFloweringTrees() method
 	
 //-----------------------------------------------------------------------------------	
